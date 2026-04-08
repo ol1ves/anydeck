@@ -10,6 +10,6 @@ write_if_missing() {
 # Append the contents $1 to the first line of file $2 if not found
 append_if_missing() {
   if ! grep -Fq "$1" "$2"; then
-    sed -i "s/$/ $1/" "$2"
+    echo "$(cat $2) $1" > "$2"
   fi
 }
