@@ -23,7 +23,7 @@ fi
 BOOT_CONFIG_DIR=/boot/firmware
 BOOT_CONFIG="$BOOT_CONFIG_DIR/config.txt"
 BOOT_CMDLINE="$BOOT_CONFIG_DIR/cmdline.txt"
-systemctl disable NetworkManager ModemManager avahi-daemon wpa_supplicant cloud-final
+systemctl disable NetworkManager ModemManager avahi-daemon wpa_supplicant cloud-final lightdm
 write_if_missing "dtoverlay=disable-bt" "$BOOT_CONFIG"
 append_if_missing "fastboot loglevel=3" "$BOOT_CMDLINE"
 
